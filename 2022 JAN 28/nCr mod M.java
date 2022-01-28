@@ -1,4 +1,35 @@
-static long mod=1000003;
+// { Driver Code Starts
+//Initial Template for Java
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class GFG
+{
+    public static void main(String[] args) throws IOException
+    {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int T = Integer.parseInt(br.readLine().trim());
+        while(T-->0)
+        {
+            String[] s = br.readLine().trim().split(" ");
+            long n = Long.parseLong(s[0]);
+            long r = Long.parseLong(s[1]);
+            Solution obj = new Solution();
+            int ans = obj.nCr(n, r);
+            System.out.println(ans);
+
+        }
+    }
+}
+// } Driver Code Ends
+
+
+//User function Template for Java
+
+class Solution
+{
+    static long mod=1000003;
     public static int nCr(long n, long r)
     {
         return (int)lucas(n,r);
@@ -38,3 +69,4 @@ static long mod=1000003;
         long ni=n%mod,ri=r%mod;
         return (lucas(n/mod,r/mod)*fermat(ni,ri))%mod;
     }
+}
